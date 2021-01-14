@@ -1,6 +1,6 @@
 # svelte-scroller ([demo](https://svelte.dev/repl/76846b7ae27b3a21becb64ffd6e9d4a6?version=3))
 
-A scroller component for Svelte apps.
+A scroller component for Svelte apps that is modified for the Reuters Graphics rig.
 
 ## Installation
 
@@ -9,7 +9,8 @@ yarn add https://github.com/reuters-graphics/svelte-scroller
 ```
 
 
-## Usage
+## Create your custom scroller component
+Create a svelte component file in your project's js folder with the file extension ".svelte" and copy the example below into it.
 
 ```html
 <script>
@@ -20,7 +21,7 @@ yarn add https://github.com/reuters-graphics/svelte-scroller
 </script>
 
 <style>
-  section { height: 80vh; }
+  section { height: 100vh; }
 </style>
 
 <Scroller {isEmbeded} bind:index bind:offset bind:progress>
@@ -43,6 +44,21 @@ yarn add https://github.com/reuters-graphics/svelte-scroller
 
 You must have one `slot="background"` element and one `slot="foreground"` element — see [composing with &lt;slot&gt;](https://svelte.dev/tutorial/slots) for more info.
 
+## Create your custom scroller component
+
+Copy the following code into your app.js file. This assumes that you have a variable there called 'isEmbedded' per the default rig inititialization.
+
+```html
+import MySvelteScroller from './mySvelteScroller.svelte';
+
+new MySvelteScroller({
+  target: document.querySelector('.YourElementSelectorHere'),
+  props: {
+    isEmbedded: isEmbedded
+  }
+})
+
+```
 
 ## Parameters
 
@@ -55,6 +71,7 @@ The following parameters are available:
 | threshold | 0.5       | Once a section crosses this point, it becomes 'active'                                                                                                                                                              |
 | query     | 'section' | A CSS selector that describes the individual sections of your foreground                                                                                                                                            |
 | parallax  | false     | If `true`, the background will scroll such that the bottom edge reaches the `bottom` at the same time as the foreground. This effect can be unpleasant for people with high motion sensitivity, so use it advisedly |
+| isEmbedded  | false     | If `true`, the fixed position functionality and background slot will be turned off and only the foreground slot will be displaed.  |
 
 
 ## `index`, `offset`, `progress` and `count`

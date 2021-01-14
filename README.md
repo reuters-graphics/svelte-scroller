@@ -46,8 +46,9 @@ Create a svelte component file in your project's js folder with the file extensi
     {#if isEmbedded}
       For example, breaking apart the background scroll elements and inlcuding static images.
     {/if}
-    <section>This is the third section.</section>
     
+    <section>This is the third section.</section>
+
   </div>
 </Scroller>
 ```

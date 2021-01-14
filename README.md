@@ -5,7 +5,7 @@ A scroller component for Svelte apps.
 ## Installation
 
 ```bash
-yarn add @sveltejs/svelte-scroller
+yarn add @reuters-graphics/svelte-scroller
 ```
 
 

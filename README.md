@@ -36,8 +36,18 @@ Create a svelte component file in your project's js folder with the file extensi
 
   <div slot="foreground">
     <section>This is the first section.</section>
+
+    {#if isEmbedded}
+      Show something here for the embed version.
+    {/if}
+
     <section>This is the second section.</section>
+
+    {#if isEmbedded}
+      For example, breaking apart the background scroll elements and inlcuding static images.
+    {/if}
     <section>This is the third section.</section>
+    
   </div>
 </Scroller>
 ```

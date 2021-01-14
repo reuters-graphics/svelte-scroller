@@ -5,7 +5,7 @@ A scroller component for Svelte apps.
 ## Installation
 
 ```bash
-yarn add @reuters-graphics/svelte-scroller
+yarn add https://github.com/reuters-graphics/svelte-scroller
 ```
 
 
@@ -13,7 +13,7 @@ yarn add @reuters-graphics/svelte-scroller
 
 ```html
 <script>
-  import Scroller from '@reuters-graphics/svelte-scroller';
+  import Scroller from 'svelte-scroller';
   export let isEmbedded = false;
 
   let index, offset, progress;

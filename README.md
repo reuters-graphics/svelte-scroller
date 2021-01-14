@@ -10,7 +10,7 @@ yarn add https://github.com/reuters-graphics/svelte-scroller
 
 
 ## Create your custom scroller component
-Create a svelte component file in your project's js folder with the file extension ".svelte" and copy the example below into it.
+Create a svelte component file in your project's js folder with the file extension `.svelte` and copy the example below into it.
 
 ```html
 <script>
@@ -46,7 +46,7 @@ You must have one `slot="background"` element and one `slot="foreground"` elemen
 
 ## Create your custom scroller component
 
-Copy the following code into your app.js file. This assumes that you have a variable there called 'isEmbedded' per the default rig inititialization.
+Copy the following code into your app.js file. This assumes that you have a variable there called `isEmbedded` per the default rig inititialization.
 
 ```html
 import MySvelteScroller from './mySvelteScroller.svelte';

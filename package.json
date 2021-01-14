@@ -1,5 +1,5 @@
 {
-  "name": "@sveltejs/svelte-scroller",
+  "name": "svelte-scroller",
   "version": "2.0.6",
   "description": "A <Scroller> component for Svelte apps",
   "svelte": "Scroller.svelte",
@@ -25,7 +25,7 @@
     "tap-dot": "^2.0.0",
     "tape-modern": "^1.1.1"
   },
-  "repository": "https://github.com/sveltejs/svelte-scroller",
+  "repository": "https://github.com/reuters-graphics/svelte-scroller",
   "author": "Rich Harris",
   "license": "LIL",
   "keywords": [

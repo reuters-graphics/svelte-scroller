@@ -69,6 +69,7 @@
 	export let threshold = 0.5;
 	export let query = 'section';
 	export let parallax = false;
+	export let isEmbedded = false;
 
 	// bindings
 	export let index = 0;
@@ -104,6 +105,8 @@
 	`;
 
 	onMount(() => {
+		if (isEmbedded) return;
+
 		sections = foreground.querySelectorAll(query);
 		count = sections.length;
 
@@ -165,17 +168,22 @@
 
 <svelte:window bind:innerHeight={wh}/>
 
-<svelte-scroller-outer bind:this={outer}>
-	<svelte-scroller-background-container class='background-container' {style}>
-		<svelte-scroller-background bind:this={background}>
-			<slot name="background"></slot>
-		</svelte-scroller-background>
-	</svelte-scroller-background-container>
+{#if !isEmbedded}
+	<svelte-scroller-outer bind:this={outer}>
+		<svelte-scroller-background-container class='background-container' {style}>
+			<svelte-scroller-background bind:this={background}>
+				<slot name="background"></slot>
+			</svelte-scroller-background>
+		</svelte-scroller-background-container>
 
-	<svelte-scroller-foreground bind:this={foreground}>
-		<slot name="foreground"></slot>
-	</svelte-scroller-foreground>
-</svelte-scroller-outer>
+		<svelte-scroller-foreground bind:this={foreground}>
+			<slot name="foreground"></slot>
+		</svelte-scroller-foreground>
+	</svelte-scroller-outer>
+{:else}
+	<slot name="foreground"></slot>
+{/if}
+
 
 <style>
 	svelte-scroller-outer {

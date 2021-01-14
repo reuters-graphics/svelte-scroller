@@ -13,8 +13,9 @@ yarn add @sveltejs/svelte-scroller
 
 ```html
 <script>
-  import Scroller from '@sveltejs/svelte-scroller';
-  
+  import Scroller from '@reuters-graphics/svelte-scroller';
+  export let isEmbedded = false;
+
   let index, offset, progress;
 </script>
 
@@ -22,7 +23,7 @@ yarn add @sveltejs/svelte-scroller
   section { height: 80vh; }
 </style>
 
-<Scroller top={0.2} bottom={0.8} bind:index bind:offset bind:progress>
+<Scroller {isEmbeded} bind:index bind:offset bind:progress>
   <div slot="background">
     <p>
       This is the background content. It will stay fixed
